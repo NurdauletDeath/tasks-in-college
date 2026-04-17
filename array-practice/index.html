@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Practice Tasks</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+        .log { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Check Console (F12) to see Array methods in action</h2>
+    <div class="log" id="display"></div>
+
+    <script>
+        const display = document.getElementById('display');
+        let myArr = ['Apple', 'Banana'];
+
+        // 1. Массивке элемент қосу (push)
+        myArr.push('Orange');
+        
+        // 2. Соңғы элементті жою (pop)
+        myArr.pop();
+
+        // 3. Бірінші элементті жою (shift)
+        myArr.shift();
+
+        // 4. Массивтің басына элемент қосу (unshift)
+        myArr.unshift('Strawberry');
+
+        // 5. Массив нәтижесін шығару
+        console.log("Final Array:", myArr);
+        display.innerText = "Final Array: " + JSON.stringify(myArr);
+
+        // AI Task: Мини-программа
+        function aiApp(item) {
+            let list = ['Task 1', 'Task 2'];
+            list.push(item);
+            list.shift();
+            return list;
+        }
+        console.log("AI Mini-Program Result:", aiApp("Master JS"));
+    </script>
+</body>
+</html>

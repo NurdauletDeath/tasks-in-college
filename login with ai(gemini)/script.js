@@ -1,4 +1,4 @@
-const validPassword = "admin"; // Правильный пароль для примера
+const validPassword = "123"; // Правильный пароль для примера
 
 function startValidation() {
     const inputPass = document.getElementById('password').value;
