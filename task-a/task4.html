@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4 - Default Values</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fae8ff, #f5d0fe);
+      color: #581c87;
+    }
+
+    .card {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(88, 28, 135, 0.15);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>4 тапсырма: Default мән</h1>
+    <p>Қажетті қасиет жоқ болса, destructuring ішінде default мән беруге болады:</p>
+    <ul id="result"></ul>
+  </main>
+
+  <script>
+    const user = {
+      username: "Aidar"
+    };
+
+    const {
+      username,
+      role = "guest",
+      country = "Kazakhstan"
+    } = user;
+
+    const result = [
+      `Бастапқы объект: username = ${user.username}`,
+      `username = ${username}`,
+      `role = ${role}`,
+      `country = ${country}`
+    ];
+
+    document.getElementById("result").innerHTML = result
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
+    console.log("Task 4:", { user, username, role, country });
+  </script>
+</body>
+</html>

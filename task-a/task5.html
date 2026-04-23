@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5 - this with Object</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+      color: #0f172a;
+    }
+
+    .card {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(14, 116, 144, 0.15);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>5 тапсырма: Аты, жасы бар объект және this</h1>
+    <p>Объект ішінде <code>this</code> арқылы өз қасиеттерін қолдану мысалы:</p>
+    <ul id="result"></ul>
+  </main>
+
+  <script>
+    const person = {
+      name: "Nursultan",
+      age: 21,
+      showInfo() {
+        return `Аты: ${this.name}, жасы: ${this.age}`;
+      }
+    };
+
+    const result = [
+      `name = ${person.name}`,
+      `age = ${person.age}`,
+      `showInfo() => ${person.showInfo()}`
+    ];
+
+    document.getElementById("result").innerHTML = result
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
+    console.log("Task 5:", person.showInfo());
+  </script>
+</body>
+</html>

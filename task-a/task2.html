@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - Object Destructuring</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      color: #1f2937;
+    }
+
+    .card {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(120, 53, 15, 0.16);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>2 тапсырма: Объект және destructuring</h1>
+    <p>Объект құрып, оның мәндерін destructuring арқылы аламыз:</p>
+    <ul id="result"></ul>
+  </main>
+
+  <script>
+    const student = {
+      name: "Aruzhan",
+      age: 19,
+      city: "Almaty"
+    };
+
+    const { name, age, city } = student;
+
+    const result = [
+      `Объект: name = ${student.name}, age = ${student.age}, city = ${student.city}`,
+      `name = ${name}`,
+      `age = ${age}`,
+      `city = ${city}`
+    ];
+
+    document.getElementById("result").innerHTML = result
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
+    console.log("Task 2:", { student, name, age, city });
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 8 - Update Object Values</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+      color: #4c1d95;
+    }
+
+    .card {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(76, 29, 149, 0.15);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>8 тапсырма: Мәндерді өзгертіп, this арқылы тексеру</h1>
+    <p>Объект ішіндегі мәндерді өзгертіп, method арқылы жаңарған нәтижені көреміз:</p>
+    <ul id="result"></ul>
+  </main>
+
+  <script>
+    const profile = {
+      name: "Amina",
+      age: 18,
+      city: "Shymkent",
+      showProfile() {
+        return `Аты: ${this.name}, жасы: ${this.age}, қаласы: ${this.city}`;
+      },
+      updateProfile(newAge, newCity) {
+        this.age = newAge;
+        this.city = newCity;
+      }
+    };
+
+    const beforeUpdate = profile.showProfile();
+    profile.updateProfile(19, "Astana");
+    const afterUpdate = profile.showProfile();
+
+    const result = [
+      `Өзгеріске дейін: ${beforeUpdate}`,
+      `Өзгеріске кейін: ${afterUpdate}`,
+      `Тексеру: age = ${profile.age}, city = ${profile.city}`
+    ];
+
+    document.getElementById("result").innerHTML = result
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
+    console.log("Task 8:", { beforeUpdate, afterUpdate, profile });
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Array Destructuring</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #f4f7fb, #dbeafe);
+      color: #1e293b;
+    }
+
+    .card {
+      max-width: 760px;
+      margin: 48px auto;
+      padding: 32px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    code {
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>1 тапсырма: Массив және destructuring</h1>
+    <p>Массив құрып, destructuring арқылы мәндерді бөлу мысалы:</p>
+    <ul id="result"></ul>
+  </main>
+
+  <script>
+    const colors = ["Red", "Green", "Blue"];
+    const [firstColor, secondColor, thirdColor] = colors;
+
+    const result = [
+      `Бастапқы массив: ${colors.join(", ")}`,
+      `firstColor = ${firstColor}`,
+      `secondColor = ${secondColor}`,
+      `thirdColor = ${thirdColor}`
+    ];
+
+    document.getElementById("result").innerHTML = result
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
+    console.log("Task 1:", { colors, firstColor, secondColor, thirdColor });
+  </script>
+</body>
+</html>
